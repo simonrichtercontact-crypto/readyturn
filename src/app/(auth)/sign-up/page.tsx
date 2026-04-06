@@ -162,8 +162,8 @@ export default function SignUpPage() {
 
           <p className="text-center text-xs text-muted-foreground">
             By creating an account, you agree to our{" "}
-            <span className="underline cursor-pointer">Terms of Service</span> and{" "}
-            <span className="underline cursor-pointer">Privacy Policy</span>.
+            <Link href="/legal/terms" className="underline hover:text-foreground transition-colors">Terms of Service</Link> and{" "}
+            <Link href="/legal/privacy" className="underline hover:text-foreground transition-colors">Privacy Policy</Link>.
           </p>
         </form>
       </div>

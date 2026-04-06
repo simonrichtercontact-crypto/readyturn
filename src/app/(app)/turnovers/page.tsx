@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Plus, RotateCcw, AlertTriangle } from "lucide-react";
+import { Plus, RotateCcw, AlertTriangle, Search, X } from "lucide-react";
 import { createClient, getUserCompany } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -26,7 +26,7 @@ const STATUS_FILTERS = [
 export default async function TurnoversPage({
   searchParams,
 }: {
-  searchParams: Promise<{ status?: string; priority?: string; property?: string }>;
+  searchParams: Promise<{ status?: string; priority?: string; property?: string; q?: string }>;
 }) {
   const sp = await searchParams;
   const [supabase, companyData] = await Promise.all([
@@ -59,6 +59,20 @@ export default async function TurnoversPage({
       .eq("is_archived", false)
       .order("name"),
   ]);
+
+  // Client-side text search filter
+  const searchQuery = sp.q?.toLowerCase() || "";
+  const filteredTurnovers = searchQuery
+    ? turnovers?.filter((t) => {
+        const prop = t.property as { name: string } | null;
+        const unit = t.unit as { unit_number: string } | null;
+        return (
+          prop?.name?.toLowerCase().includes(searchQuery) ||
+          unit?.unit_number?.toLowerCase().includes(searchQuery) ||
+          t.notes?.toLowerCase().includes(searchQuery)
+        );
+      })
+    : turnovers;
 
   const activeFilter = sp.status || "";
   const company = companyData.companies as { plan?: string } | null;
@@ -97,6 +111,25 @@ export default async function TurnoversPage({
         />
       )}
 
+      {/* Search bar */}
+      <form method="get" className="relative">
+        {sp.status && <input type="hidden" name="status" value={sp.status} />}
+        {sp.priority && <input type="hidden" name="priority" value={sp.priority} />}
+        {sp.property && <input type="hidden" name="property" value={sp.property} />}
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+        <input
+          name="q"
+          defaultValue={sp.q || ""}
+          placeholder="Search by unit number or property name..."
+          className="w-full h-10 pl-9 pr-9 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+        />
+        {sp.q && (
+          <Link href={sp.status ? `/turnovers?status=${sp.status}` : "/turnovers"} className="absolute right-3 top-1/2 -translate-y-1/2">
+            <X className="h-4 w-4 text-muted-foreground hover:text-foreground" />
+          </Link>
+        )}
+      </form>
+
       {/* Status tabs */}
       <div className="flex items-center gap-1 border-b border-border">
         {STATUS_FILTERS.map((f) => (
@@ -116,7 +149,7 @@ export default async function TurnoversPage({
         <TurnoverFilters properties={properties ?? []} />
       </div>
 
-      {!turnovers || turnovers.length === 0 ? (
+      {!filteredTurnovers || filteredTurnovers.length === 0 ? (
         <div className="rounded-xl border border-border bg-card">
           <EmptyState
             icon={RotateCcw}
@@ -140,7 +173,7 @@ export default async function TurnoversPage({
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {(turnovers as unknown as TurnoverWithDetails[]).map((t) => {
+                {(filteredTurnovers as unknown as TurnoverWithDetails[]).map((t) => {
                   const overdue = isOverdue(t.target_ready_date) && t.status !== "ready";
                   return (
                     <tr

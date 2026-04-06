@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   RotateCcw, AlertTriangle, CheckCircle2, Clock, Plus, ArrowRight,
   Building2, ShieldAlert, DollarSign, TrendingUp, Calendar, Flame,
-  ArrowUpRight, Home, Target,
+  ArrowUpRight, Home, Target, Sparkles,
 } from "lucide-react";
 import { createClient, getUserCompany, getUser } from "@/lib/supabase/server";
 import { StatCard } from "@/components/shared/stat-card";
@@ -349,6 +349,71 @@ async function RecentActivity() {
   return <ActivityFeed activities={activities ?? []} compact />;
 }
 
+/* ─── Onboarding Checklist ────────────────────────── */
+async function OnboardingChecklist() {
+  const [supabase, companyData] = await Promise.all([createClient(), getUserCompany()]);
+  if (!companyData) return null;
+  const cid = companyData.company_id;
+
+  const [
+    { count: propCount },
+    { count: unitCount },
+    { count: turnoverCount },
+    { count: memberCount },
+  ] = await Promise.all([
+    supabase.from("properties").select("id", { count: "exact" }).eq("company_id", cid).eq("is_archived", false),
+    supabase.from("units").select("id", { count: "exact" }).eq("company_id", cid),
+    supabase.from("turnovers").select("id", { count: "exact" }).eq("company_id", cid),
+    supabase.from("company_members").select("id", { count: "exact" }).eq("company_id", cid),
+  ]);
+
+  const steps = [
+    { label: "Add your first property", done: (propCount ?? 0) > 0, href: "/properties/new" },
+    { label: "Add a unit to your property", done: (unitCount ?? 0) > 0, href: "/units/new" },
+    { label: "Create your first turnover", done: (turnoverCount ?? 0) > 0, href: "/turnovers/new" },
+    { label: "Invite a team member", done: (memberCount ?? 0) > 1, href: "/team" },
+  ];
+
+  const doneCount = steps.filter((s) => s.done).length;
+  if (doneCount === steps.length) return null; // hide when complete
+
+  return (
+    <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-blue-50/50 p-5">
+      <div className="flex items-start gap-3 mb-4">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+          <Sparkles className="h-4 w-4 text-primary" />
+        </div>
+        <div className="flex-1">
+          <p className="text-sm font-semibold text-foreground">Get started — {doneCount}/{steps.length} complete</p>
+          <p className="text-xs text-muted-foreground mt-0.5">Complete these steps to get the most out of ReadyTurn</p>
+        </div>
+        <div className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+          {Math.round((doneCount / steps.length) * 100)}%
+        </div>
+      </div>
+      <div className="h-1.5 w-full bg-primary/10 rounded-full mb-4 overflow-hidden">
+        <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${(doneCount / steps.length) * 100}%` }} />
+      </div>
+      <div className="space-y-2">
+        {steps.map((step) => (
+          step.done ? (
+            <div key={step.label} className="flex items-center gap-2.5 py-1.5 opacity-50">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+              <span className="text-sm line-through text-muted-foreground">{step.label}</span>
+            </div>
+          ) : (
+            <Link key={step.label} href={step.href} className="flex items-center gap-2.5 rounded-lg py-1.5 px-2 -mx-2 hover:bg-primary/5 transition-colors group">
+              <div className="h-4 w-4 rounded-full border-2 border-primary/30 shrink-0 group-hover:border-primary transition-colors" />
+              <span className="text-sm font-medium text-foreground">{step.label}</span>
+              <ArrowRight className="ml-auto h-3.5 w-3.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+          )
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ─── Skeletons ───────────────────────────────────── */
 function StatsSkeleton() {
   return (
@@ -380,6 +445,11 @@ export default async function DashboardPage() {
           </Link>
         </Button>
       </PageHeader>
+
+      {/* Onboarding checklist — hides automatically when all done */}
+      <Suspense fallback={null}>
+        <OnboardingChecklist />
+      </Suspense>
 
       {/* KPI stats */}
       <Suspense fallback={<StatsSkeleton />}>
