@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   typescript: {
     // Supabase query builder types require generated types from `supabase gen types`.
     // Ignored here for MVP; run `supabase gen types typescript` after setup to fix.
