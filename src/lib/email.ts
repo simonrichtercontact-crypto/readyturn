@@ -27,7 +27,7 @@ export async function sendEmail({
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "ReadyTurn <notifications@readyturn.app>",
+      from: "TurnTiva <notifications@turntiva.app>",
       to,
       subject,
       html,
@@ -79,7 +79,7 @@ export function overdueEmailHtml(items: { unit: string; property: string; date: 
         </div>
       </div>
       <div style="padding:16px 32px;background:#f9fafb;color:#9ca3af;font-size:12px;">
-        ReadyTurn · You're receiving this because you're a team owner.
+        TurnTiva · You're receiving this because you're a team owner.
       </div>
     </div>
   `;
@@ -104,7 +104,7 @@ export function weeklyReportHtml({
         <h1 style="color:#fff;margin:0;font-size:20px;">📊 Weekly Summary — ${companyName}</h1>
       </div>
       <div style="padding:32px;">
-        <p style="color:#374151;margin-top:0;">Here's your ReadyTurn summary for this week:</p>
+        <p style="color:#374151;margin-top:0;">Here's your TurnTiva summary for this week:</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
           ${[
             { label: "Active Turnovers", value: active, color: "#3b82f6" },
@@ -128,7 +128,7 @@ export function weeklyReportHtml({
         </div>
       </div>
       <div style="padding:16px 32px;background:#f9fafb;color:#9ca3af;font-size:12px;">
-        ReadyTurn · Weekly digest every Monday morning.
+        TurnTiva · Weekly digest every Monday morning.
       </div>
     </div>
   `;

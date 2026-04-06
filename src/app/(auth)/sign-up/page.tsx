@@ -49,7 +49,7 @@ export default function SignUpPage() {
           <h2 className="text-xl font-semibold text-foreground">Check your email</h2>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
             We sent a confirmation link to your email. Click it to activate your account
-            and start using ReadyTurn.
+            and start using TurnTiva.
           </p>
           <div className="mt-6">
             <Link href="/sign-in">
@@ -68,7 +68,7 @@ export default function SignUpPage() {
           Create your workspace
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Set up ReadyTurn for your property management team
+          Set up TurnTiva for your property management team
         </p>
       </div>
 

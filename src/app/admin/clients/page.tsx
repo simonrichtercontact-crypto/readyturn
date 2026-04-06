@@ -64,7 +64,7 @@ export default function AdminClientsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white">Clients</h1>
-          <p className="mt-1 text-sm text-slate-400">All companies signed up to ReadyTurn.</p>
+          <p className="mt-1 text-sm text-slate-400">All companies signed up to TurnTiva.</p>
         </div>
         <div className="flex items-center gap-3">
           <Link

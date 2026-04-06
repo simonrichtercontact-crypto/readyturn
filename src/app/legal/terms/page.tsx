@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/logo";
 
-export const metadata = { title: "Terms of Service — ReadyTurn" };
+export const metadata = { title: "Terms of Service — TurnTiva" };
 
 export default function TermsPage() {
   return (
@@ -20,12 +20,12 @@ export default function TermsPage() {
         <div className="prose prose-slate max-w-none space-y-6 text-sm text-foreground leading-relaxed">
           <section>
             <h2 className="text-lg font-semibold mb-2">1. Acceptance of Terms</h2>
-            <p>By creating an account or using ReadyTurn ("Service"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
+            <p>By creating an account or using TurnTiva ("Service"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold mb-2">2. Description of Service</h2>
-            <p>ReadyTurn is a property management SaaS platform that helps property managers track unit turnovers, coordinate make-ready workflows, and manage teams. The Service is provided on a subscription basis.</p>
+            <p>TurnTiva is a property management SaaS platform that helps property managers track unit turnovers, coordinate make-ready workflows, and manage teams. The Service is provided on a subscription basis.</p>
           </section>
 
           <section>
@@ -35,7 +35,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-lg font-semibold mb-2">4. Subscription & Billing</h2>
-            <p>ReadyTurn offers a free plan and paid plans. Paid plan upgrades are processed manually and activated within 1 business hour. You may request a downgrade or cancellation at any time by contacting us at <a href="mailto:hello@readyturn.app" className="text-primary hover:underline">hello@readyturn.app</a>.</p>
+            <p>TurnTiva offers a free plan and paid plans. Paid plan upgrades are processed manually and activated within 1 business hour. You may request a downgrade or cancellation at any time by contacting us at <a href="mailto:hello@turntiva.app" className="text-primary hover:underline">hello@turntiva.app</a>.</p>
           </section>
 
           <section>
@@ -50,7 +50,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-lg font-semibold mb-2">7. Limitation of Liability</h2>
-            <p>ReadyTurn is provided "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the Service.</p>
+            <p>TurnTiva is provided "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the Service.</p>
           </section>
 
           <section>
@@ -65,7 +65,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-lg font-semibold mb-2">10. Contact</h2>
-            <p>For questions about these Terms, contact us at <a href="mailto:hello@readyturn.app" className="text-primary hover:underline">hello@readyturn.app</a>.</p>
+            <p>For questions about these Terms, contact us at <a href="mailto:hello@turntiva.app" className="text-primary hover:underline">hello@turntiva.app</a>.</p>
           </section>
         </div>
       </main>

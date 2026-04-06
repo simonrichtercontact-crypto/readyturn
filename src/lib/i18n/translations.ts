@@ -41,7 +41,7 @@ const en: T = {
     badge: "Built for property management teams",
     h1a: "Turn vacant units",
     h1b: "ready. Fast.",
-    sub: "ReadyTurn replaces your scattered spreadsheets and WhatsApp threads with one clean platform to manage turnovers, assign tasks, track costs, and get units rent-ready faster.",
+    sub: "TurnTiva replaces your scattered spreadsheets and WhatsApp threads with one clean platform to manage turnovers, assign tasks, track costs, and get units rent-ready faster.",
     cta1: "Start free — no card needed",
     cta2: "Sign in to workspace",
     trust: ["Free forever plan", "No credit card", "Up and running in 5 min"],
@@ -97,7 +97,7 @@ const en: T = {
     ],
   },
   compare: {
-    title: "Why ReadyTurn beats spreadsheets",
+    title: "Why TurnTiva beats spreadsheets",
     sub: "Spreadsheets can't tell you what's blocked, who's responsible, or what needs action today.",
     rows: [
       { bad: "Status updates that go stale instantly", good: "Real-time status visible to your whole team" },
@@ -114,7 +114,7 @@ const en: T = {
     items: [
       { quote: "We cut our average turnover time from 12 days to 8. Having everything in one place instead of WhatsApp groups made the difference.", name: "Sarah M.", role: "Portfolio Manager · 42 units" },
       { quote: "The cost tracking feature alone saved us from two contractors who kept going over budget. Now we catch it before it's too late.", name: "James R.", role: "Property Owner · 3 buildings" },
-      { quote: "I used to manage everything in Excel. ReadyTurn took 10 minutes to set up and now my whole team is on the same page every morning.", name: "Linda K.", role: "Regional Supervisor · 120 units" },
+      { quote: "I used to manage everything in Excel. TurnTiva took 10 minutes to set up and now my whole team is on the same page every morning.", name: "Linda K.", role: "Regional Supervisor · 120 units" },
     ],
   },
   pricing: {
@@ -140,7 +140,7 @@ const de: T = {
     badge: "Für Hausverwaltungsteams entwickelt",
     h1a: "Leerstände schneller",
     h1b: "vermieten.",
-    sub: "ReadyTurn ersetzt Ihre verstreuten Tabellen und WhatsApp-Gruppen durch eine saubere Plattform für Wohnungsübergaben, Aufgabenverwaltung, Kostenerfassung und schnellere Mietbereitschaft.",
+    sub: "TurnTiva ersetzt Ihre verstreuten Tabellen und WhatsApp-Gruppen durch eine saubere Plattform für Wohnungsübergaben, Aufgabenverwaltung, Kostenerfassung und schnellere Mietbereitschaft.",
     cta1: "Kostenlos starten — ohne Kreditkarte",
     cta2: "Zum Arbeitsbereich anmelden",
     trust: ["Dauerhaft kostenloser Plan", "Keine Kreditkarte", "In 5 Minuten startklar"],
@@ -196,7 +196,7 @@ const de: T = {
     ],
   },
   compare: {
-    title: "Warum ReadyTurn besser ist als Tabellen",
+    title: "Warum TurnTiva besser ist als Tabellen",
     sub: "Tabellen können Ihnen nicht sagen, was blockiert ist, wer verantwortlich ist oder was heute zu tun ist.",
     rows: [
       { bad: "Statusaktualisierungen, die sofort veralten", good: "Echtzeit-Status für Ihr gesamtes Team sichtbar" },
@@ -213,7 +213,7 @@ const de: T = {
     items: [
       { quote: "Wir haben unsere durchschnittliche Übergabezeit von 12 auf 8 Tage reduziert. Alles an einem Ort statt in WhatsApp-Gruppen hat den Unterschied gemacht.", name: "Sarah M.", role: "Portfolio-Managerin · 42 Einheiten" },
       { quote: "Die Kostenerfassung allein hat uns vor zwei Handwerkern gerettet, die ständig das Budget überschritten. Jetzt merken wir es rechtzeitig.", name: "James R.", role: "Immobilieneigentümer · 3 Gebäude" },
-      { quote: "Ich habe früher alles in Excel verwaltet. ReadyTurn war in 10 Minuten eingerichtet und jetzt ist mein ganzes Team jeden Morgen auf dem gleichen Stand.", name: "Linda K.", role: "Regionalleiterin · 120 Einheiten" },
+      { quote: "Ich habe früher alles in Excel verwaltet. TurnTiva war in 10 Minuten eingerichtet und jetzt ist mein ganzes Team jeden Morgen auf dem gleichen Stand.", name: "Linda K.", role: "Regionalleiterin · 120 Einheiten" },
     ],
   },
   pricing: {
@@ -239,7 +239,7 @@ const es: T = {
     badge: "Diseñado para equipos de gestión inmobiliaria",
     h1a: "Prepara unidades vacías",
     h1b: "más rápido.",
-    sub: "ReadyTurn reemplaza tus hojas de cálculo y grupos de WhatsApp con una plataforma limpia para gestionar renovaciones, asignar tareas, controlar costes y tener las unidades listas antes.",
+    sub: "TurnTiva reemplaza tus hojas de cálculo y grupos de WhatsApp con una plataforma limpia para gestionar renovaciones, asignar tareas, controlar costes y tener las unidades listas antes.",
     cta1: "Empezar gratis — sin tarjeta",
     cta2: "Acceder al espacio de trabajo",
     trust: ["Plan gratuito permanente", "Sin tarjeta de crédito", "Listo en 5 minutos"],
@@ -295,7 +295,7 @@ const es: T = {
     ],
   },
   compare: {
-    title: "Por qué ReadyTurn supera a las hojas de cálculo",
+    title: "Por qué TurnTiva supera a las hojas de cálculo",
     sub: "Las hojas de cálculo no pueden decirte qué está bloqueado, quién es responsable o qué necesita acción hoy.",
     rows: [
       { bad: "Actualizaciones de estado que se quedan obsoletas", good: "Estado en tiempo real visible para todo tu equipo" },
@@ -312,7 +312,7 @@ const es: T = {
     items: [
       { quote: "Redujimos nuestro tiempo medio de renovación de 12 a 8 días. Tener todo en un solo lugar en vez de grupos de WhatsApp marcó la diferencia.", name: "Sarah M.", role: "Gestora de cartera · 42 unidades" },
       { quote: "El seguimiento de costes solo nos salvó de dos contratistas que siempre se pasaban del presupuesto. Ahora lo detectamos a tiempo.", name: "James R.", role: "Propietario · 3 edificios" },
-      { quote: "Antes lo gestionaba todo en Excel. ReadyTurn tardó 10 minutos en configurarse y ahora todo mi equipo está alineado cada mañana.", name: "Linda K.", role: "Supervisora regional · 120 unidades" },
+      { quote: "Antes lo gestionaba todo en Excel. TurnTiva tardó 10 minutos en configurarse y ahora todo mi equipo está alineado cada mañana.", name: "Linda K.", role: "Supervisora regional · 120 unidades" },
     ],
   },
   pricing: {
@@ -338,7 +338,7 @@ const fr: T = {
     badge: "Conçu pour les équipes de gestion immobilière",
     h1a: "Remettez les logements vacants",
     h1b: "sur le marché. Vite.",
-    sub: "ReadyTurn remplace vos tableurs éparpillés et groupes WhatsApp par une plateforme claire pour gérer les remises en état, assigner les tâches, suivre les coûts et louer plus vite.",
+    sub: "TurnTiva remplace vos tableurs éparpillés et groupes WhatsApp par une plateforme claire pour gérer les remises en état, assigner les tâches, suivre les coûts et louer plus vite.",
     cta1: "Démarrer gratuitement — sans carte",
     cta2: "Accéder à mon espace",
     trust: ["Plan gratuit permanent", "Sans carte bancaire", "Opérationnel en 5 min"],
@@ -394,7 +394,7 @@ const fr: T = {
     ],
   },
   compare: {
-    title: "Pourquoi ReadyTurn surpasse les tableurs",
+    title: "Pourquoi TurnTiva surpasse les tableurs",
     sub: "Les tableurs ne peuvent pas vous dire ce qui est bloqué, qui est responsable ou ce qui nécessite une action aujourd'hui.",
     rows: [
       { bad: "Mises à jour de statut qui deviennent obsolètes", good: "Statut en temps réel visible par toute votre équipe" },
@@ -411,7 +411,7 @@ const fr: T = {
     items: [
       { quote: "Nous avons réduit notre temps moyen de remise en état de 12 à 8 jours. Centraliser tout au lieu d'utiliser WhatsApp a tout changé.", name: "Sarah M.", role: "Gestrice de portefeuille · 42 logements" },
       { quote: "Le suivi des coûts seul nous a sauvés de deux artisans qui dépassaient systématiquement le budget. Maintenant on le voit à temps.", name: "James R.", role: "Propriétaire · 3 immeubles" },
-      { quote: "Je gérais tout dans Excel. ReadyTurn a été configuré en 10 minutes et toute mon équipe est alignée chaque matin.", name: "Linda K.", role: "Supervisrice régionale · 120 logements" },
+      { quote: "Je gérais tout dans Excel. TurnTiva a été configuré en 10 minutes et toute mon équipe est alignée chaque matin.", name: "Linda K.", role: "Supervisrice régionale · 120 logements" },
     ],
   },
   pricing: {

@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
 
       await sendEmail({
         to: profile.email,
-        subject: `📊 Your weekly ReadyTurn summary — ${company.name}`,
+        subject: `📊 Your weekly TurnTiva summary — ${company.name}`,
         html: weeklyReportHtml({
           companyName: company.name,
           active: active ?? 0,

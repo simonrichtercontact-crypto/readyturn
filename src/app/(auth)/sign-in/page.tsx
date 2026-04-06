@@ -42,7 +42,7 @@ export default function SignInPage() {
           Welcome back
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Sign in to your ReadyTurn workspace
+          Sign in to your TurnTiva workspace
         </p>
       </div>
 

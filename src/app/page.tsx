@@ -38,21 +38,22 @@ export default async function LandingPage() {
 
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <Logo size="md" />
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
+          <Logo size="sm" />
           <nav className="hidden md:flex items-center gap-7">
             <a href="#features" className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">{T.nav.features}</a>
             <a href="#how-it-works" className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">{T.nav.howItWorks}</a>
             <a href="#pricing" className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">{T.nav.pricing}</a>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <LangSwitcher current={locale} />
-            <Link href="/sign-in" className="hidden md:block text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/sign-in" className="hidden md:block text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors px-2">
               {T.nav.signIn}
             </Link>
             <Button asChild size="sm" className="shadow-md shadow-primary/20">
               <Link href="/sign-up">
-                {T.nav.startFree}
+                <span className="hidden sm:inline">{T.nav.startFree}</span>
+                <span className="sm:hidden">Sign up</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </Button>
@@ -103,7 +104,7 @@ export default async function LandingPage() {
                 <div className="h-3 w-3 rounded-full bg-amber-400" />
                 <div className="h-3 w-3 rounded-full bg-emerald-400" />
               </div>
-              <div className="flex-1 mx-4 h-6 rounded-md bg-slate-200/70 text-xs text-slate-400 flex items-center px-3">app.readyturn.com/dashboard</div>
+              <div className="flex-1 mx-4 h-6 rounded-md bg-slate-200/70 text-xs text-slate-400 flex items-center px-3">app.turntiva.com/dashboard</div>
             </div>
             <div className="p-6 bg-slate-50/50">
               <div className="grid grid-cols-4 gap-3 mb-6">
@@ -423,7 +424,7 @@ export default async function LandingPage() {
         <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
           <Logo size="sm" />
           <p className="text-sm text-slate-400 order-last md:order-none">
-            © {new Date().getFullYear()} ReadyTurn. {T.footer.built}
+            © {new Date().getFullYear()} TurnTiva. {T.footer.built}
           </p>
           <div className="flex items-center gap-6 text-sm text-slate-400">
             <Link href="/pricing" className="hover:text-slate-700 transition-colors">{T.nav.pricing}</Link>

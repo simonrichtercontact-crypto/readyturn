@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
-import { LayoutDashboard, Users, Building2, ShieldAlert, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, Users, Building2, ShieldAlert, ArrowLeft, MessageCircle } from "lucide-react";
 import { LogoMark } from "@/components/logo";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="flex h-14 items-center gap-2.5 border-b border-slate-800 px-4">
           <LogoMark size={26} />
           <div className="leading-none">
-            <span className="text-sm font-extrabold text-white tracking-tight">Ready<span className="text-blue-300">Turn</span></span>
+            <span className="text-sm font-extrabold text-white tracking-tight">Turn<span className="text-[#38bdf8]">Tiva</span></span>
             <div className="flex items-center gap-1 mt-0.5">
               <ShieldAlert className="h-2.5 w-2.5 text-red-400" />
               <span className="text-[10px] font-bold uppercase tracking-wider text-red-400">Admin</span>
@@ -31,6 +31,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             { href: "/admin", label: "Overview", icon: LayoutDashboard },
             { href: "/admin/clients", label: "Clients", icon: Building2 },
             { href: "/admin/users", label: "All Users", icon: Users },
+            { href: "/admin/support", label: "Support", icon: MessageCircle },
           ].map(({ href, label, icon: Icon }) => (
             <Link
               key={href}

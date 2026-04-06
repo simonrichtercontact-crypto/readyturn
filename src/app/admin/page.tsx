@@ -3,7 +3,7 @@ import { PLANS } from "@/lib/plans";
 import { Users, Building2, RotateCcw, TrendingUp } from "lucide-react";
 import { formatRelativeTime } from "@/lib/utils";
 
-export const metadata = { title: "Admin – ReadyTurn" };
+export const metadata = { title: "Admin – TurnTiva" };
 
 export default async function AdminPage() {
   const admin = createServiceClient();
@@ -45,7 +45,7 @@ export default async function AdminPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold text-white">Admin Overview</h1>
-        <p className="mt-1 text-sm text-slate-400">All clients and activity across ReadyTurn.</p>
+        <p className="mt-1 text-sm text-slate-400">All clients and activity across TurnTiva.</p>
       </div>
 
       {/* Stats */}

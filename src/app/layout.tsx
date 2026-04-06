@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ReadyTurn — Unit Turnover Management",
-    template: "%s | ReadyTurn",
+    default: "TurnTiva — Unit Turnover Management",
+    template: "%s | TurnTiva",
   },
   description:
     "Help property managers turn vacant units faster. Manage make-ready workflows, coordinate vendors, and track every task in one clean workspace.",

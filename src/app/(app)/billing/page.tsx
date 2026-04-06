@@ -159,7 +159,7 @@ export default async function BillingPage() {
                     ))}
                   </ul>
                   <a
-                    href={`mailto:hello@readyturn.app?subject=Upgrade to ${plan.name}&body=Hi, I'd like to upgrade my ReadyTurn account (${company?.name}) to the ${plan.name} plan.`}
+                    href={`mailto:hello@turntiva.app?subject=Upgrade to ${plan.name}&body=Hi, I'd like to upgrade my TurnTiva account (${company?.name}) to the ${plan.name} plan.`}
                     className="w-full"
                   >
                     <Button className="w-full" variant={plan.id === "pro" ? "default" : "outline"}>

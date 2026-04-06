@@ -1,14 +1,13 @@
 /**
- * ReadyTurn — Logo System
+ * TurnTiva — Logo System
  *
- * Concept: A bold rotation arc (= "turn" / make-ready cycle) with a
- * minimal property peak integrated inside — property management at its core.
+ * Concept: A house silhouette with a rotation arc on top-right
+ * = "Turning homes ready" — property management at its core.
  *
  * Visual language: premium SaaS (Linear / Vercel / Stripe style)
- * – Deep navy-to-indigo gradient background
+ * – Deep navy-to-teal gradient background
  * – White geometric shapes, stroke-based
  * – Works at 16 px (favicon) → 80 px (hero)
- * – One mark, every surface
  */
 
 interface LogoMarkProps {
@@ -25,62 +24,69 @@ export function LogoMark({ size = 32, className }: LogoMarkProps) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="ReadyTurn"
+      aria-label="TurnTiva"
       role="img"
     >
       <defs>
-        {/* Premium navy → indigo gradient */}
-        <linearGradient id="rt-bg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stopColor="#0f2058" />
-          <stop offset="100%" stopColor="#2d3ab1" />
+        {/* Deep navy → teal gradient — premium & distinctive */}
+        <linearGradient id="tt-bg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"  stopColor="#1e3a5f" />
+          <stop offset="100%" stopColor="#0891b2" />
         </linearGradient>
       </defs>
 
       {/* ── Background ─────────────────────────────── */}
-      <rect width="40" height="40" rx="10" fill="url(#rt-bg)" />
+      <rect width="40" height="40" rx="10" fill="url(#tt-bg)" />
 
-      {/* ── Rotation arc — thick, 270° sweep ─────────
-           Starts at top (270°) sweeps clockwise to right (0°)
-           → open gap at bottom-right = momentum / turnover cycle  */}
+      {/* ── House roofline ─────────────────────────── */}
       <path
-        d="M20 7
-           A13 13 0 1 1 33 20"
+        d="M11 22 L20 11 L29 22"
         stroke="white"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.95"
-      />
-
-      {/* ── Arrow head at arc end (bottom-right of arc) */}
-      <path
-        d="M29.5 14.5 L33 20 L27 20.5"
-        stroke="white"
-        strokeWidth="2.8"
+        strokeWidth="2.6"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
         opacity="0.95"
       />
 
-      {/* ── Property peak — centred inside the arc ───
-           Just the roofline: clean inverted-V, minimal  */}
+      {/* ── House walls ────────────────────────────── */}
       <path
-        d="M13 22 L20 15 L27 22"
+        d="M14 22 L14 31 L26 31 L26 22"
         stroke="white"
-        strokeWidth="2.4"
+        strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
-        opacity="0.7"
+        opacity="0.90"
       />
 
-      {/* ── Door — anchors the house, adds depth ─────  */}
+      {/* ── Door ───────────────────────────────────── */}
       <rect
-        x="17.5" y="22" width="5" height="6"
+        x="17.5" y="24.5" width="5" height="6.5"
         rx="1"
         fill="white"
-        opacity="0.35"
+        opacity="0.40"
+      />
+
+      {/* ── Rotation arc — top-right, "Turn" concept ─
+           Small circular arrow = turnover / make-ready cycle */}
+      <path
+        d="M28 8 A5 5 0 1 1 33 13"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.85"
+      />
+      {/* Arrow tip */}
+      <path
+        d="M30.5 10.5 L33 13 L30 14.5"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        opacity="0.85"
       />
     </svg>
   );
@@ -105,14 +111,14 @@ interface LogoProps {
 
 export function Logo({ size = "md", variant = "light", className }: LogoProps) {
   const { icon, text, gap } = sizeMap[size];
-  const word   = variant === "dark" ? "text-white"    : "text-slate-900";
-  const accent = variant === "dark" ? "text-[#7b9ef5]" : "text-[#1d4ed8]";
+  const word   = variant === "dark" ? "text-white"     : "text-slate-900";
+  const accent = variant === "dark" ? "text-[#38bdf8]" : "text-[#0891b2]";
 
   return (
     <div className={`flex items-center ${gap} ${className ?? ""}`}>
       <LogoMark size={icon} />
       <span className={`${text} tracking-tight leading-none ${word}`}>
-        Ready<span className={accent}>Turn</span>
+        Turn<span className={accent}>Tiva</span>
       </span>
     </div>
   );
@@ -130,10 +136,10 @@ export function LogoWordmark({
 }) {
   const t      = { sm: "text-sm", md: "text-base", lg: "text-lg" }[size];
   const word   = variant === "dark" ? "text-white"     : "text-slate-900";
-  const accent = variant === "dark" ? "text-[#7b9ef5]" : "text-[#1d4ed8]";
+  const accent = variant === "dark" ? "text-[#38bdf8]" : "text-[#0891b2]";
   return (
     <span className={`${t} font-extrabold tracking-tight ${word} ${className ?? ""}`}>
-      Ready<span className={accent}>Turn</span>
+      Turn<span className={accent}>Tiva</span>
     </span>
   );
 }

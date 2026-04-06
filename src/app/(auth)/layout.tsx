@@ -19,7 +19,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       {/* Footer */}
       <footer className="p-6 text-center">
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} ReadyTurn. All rights reserved.
+          © {new Date().getFullYear()} TurnTiva. All rights reserved.
         </p>
       </footer>
     </div>

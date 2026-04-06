@@ -43,7 +43,7 @@ export default async function AdminUsersPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-white">All Users</h1>
-        <p className="mt-1 text-sm text-slate-400">{profiles?.length ?? 0} users registered on ReadyTurn.</p>
+        <p className="mt-1 text-sm text-slate-400">{profiles?.length ?? 0} users registered on TurnTiva.</p>
       </div>
 
       <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">

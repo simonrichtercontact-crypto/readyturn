@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { Sidebar } from "./sidebar";
 import { Header } from "./header";
 import { LogoMark } from "@/components/logo";
+import { HelpWidget } from "@/components/shared/help-widget";
+import { LangSwitcher } from "@/components/lang-switcher";
 import type { Locale } from "@/lib/i18n/locales";
 
 interface AppShellProps {
@@ -47,15 +49,20 @@ export function AppShell({ children, companyName, userInitials, userName, userEm
       {/* Main content */}
       <div className="flex flex-1 flex-col overflow-hidden min-w-0">
         {/* Mobile top bar */}
-        <div className="flex h-14 items-center gap-3 border-b border-border bg-background md:hidden px-4">
+        <div className="flex h-14 items-center border-b border-border bg-background md:hidden px-3">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="flex h-8 w-8 items-center justify-center rounded-lg hover:bg-accent"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg hover:bg-accent"
           >
             <Menu className="h-5 w-5" />
           </button>
-          <LogoMark size={26} />
-          <span className="font-extrabold text-sm tracking-tight text-slate-900">Ready<span className="text-blue-600">Turn</span></span>
+          <div className="flex items-center gap-2 ml-2 flex-1 min-w-0">
+            <LogoMark size={24} />
+            <span className="font-extrabold text-sm tracking-tight text-slate-900">Turn<span className="text-[#0891b2]">Tiva</span></span>
+          </div>
+          <div className="shrink-0">
+            <LangSwitcher current={locale} />
+          </div>
         </div>
 
         {/* Desktop header */}
@@ -69,6 +76,9 @@ export function AppShell({ children, companyName, userInitials, userName, userEm
           </div>
         </main>
       </div>
+
+      {/* Floating help widget — always visible inside app */}
+      <HelpWidget />
     </div>
   );
 }

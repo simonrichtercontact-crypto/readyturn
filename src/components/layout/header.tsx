@@ -72,8 +72,10 @@ export function Header({ userName, userEmail, userInitials, locale = "en" }: Hea
       </nav>
 
       {/* Right side */}
-      <div className="flex items-center gap-3">
-        <LangSwitcher current={locale} />
+      <div className="flex items-center gap-2">
+        <div className="hidden sm:block">
+          <LangSwitcher current={locale} />
+        </div>
         {/* User menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

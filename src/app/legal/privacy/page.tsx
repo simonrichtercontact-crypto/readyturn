@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/logo";
 
-export const metadata = { title: "Privacy Policy — ReadyTurn" };
+export const metadata = { title: "Privacy Policy — TurnTiva" };
 
 export default function PrivacyPage() {
   return (
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-lg font-semibold mb-2">6. Your Rights</h2>
-            <p>You have the right to: access your personal data, correct inaccurate data, request deletion of your data, export your data in CSV format (Pro plan), and withdraw consent at any time. Contact us at <a href="mailto:hello@readyturn.app" className="text-primary hover:underline">hello@readyturn.app</a> to exercise these rights.</p>
+            <p>You have the right to: access your personal data, correct inaccurate data, request deletion of your data, export your data in CSV format (Pro plan), and withdraw consent at any time. Contact us at <a href="mailto:hello@turntiva.app" className="text-primary hover:underline">hello@turntiva.app</a> to exercise these rights.</p>
           </section>
 
           <section>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-lg font-semibold mb-2">9. Contact</h2>
-            <p>For privacy concerns, contact us at <a href="mailto:hello@readyturn.app" className="text-primary hover:underline">hello@readyturn.app</a>.</p>
+            <p>For privacy concerns, contact us at <a href="mailto:hello@turntiva.app" className="text-primary hover:underline">hello@turntiva.app</a>.</p>
           </section>
         </div>
       </main>

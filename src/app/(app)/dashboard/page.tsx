@@ -385,7 +385,7 @@ async function OnboardingChecklist() {
         </div>
         <div className="flex-1">
           <p className="text-sm font-semibold text-foreground">Get started — {doneCount}/{steps.length} complete</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Complete these steps to get the most out of ReadyTurn</p>
+          <p className="text-xs text-muted-foreground mt-0.5">Complete these steps to get the most out of TurnTiva</p>
         </div>
         <div className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
           {Math.round((doneCount / steps.length) * 100)}%
